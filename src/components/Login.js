@@ -6,25 +6,42 @@ import {
   } from "react-router-dom"; 
 
 function LogInComponent() {
-        
-    const handlelogin = () =>{
-        alert('😍Sign In Successful')
-       }
+    const [state, setState] = React.useState({
+        email: "",
+        password: "",
+    })
+    function handleEmailChange(event) {
+            setState ({
+                'email': event.target.value
+            }) 
+    }
+
+    function handlePasswordChange(event) {
+        setState ({
+           'password' : event.target.value        
+        })
+    }
+    
+
+    function handleLogin() {
+            alert('😍Log In Successful   '+ state.email)
+    }   
+   
   return (
     <div className="login-wrapper" >
         <div className="login-form">
     <form>
         <h2 className="text-center">Log in</h2>       
         <div className="form-group">
-            <input type="email" className="form-control" placeholder="Email" required="required" name="email"/>
+            <input type="email" className="form-control" placeholder="Email" required="required" name="email" onChange={handleEmailChange} value={state.email}/>
         </div>
         <div className="form-group">
-            <input type="password" className="form-control" placeholder="Password" required="required" name="password"/>
+            <input type="password" className="form-control" placeholder="Password" required="required" name="password" onChange ={handlePasswordChange} value={state.password}/>
         </div>
         <div className="form-group">
         </div>
         <div className="form-group">
-            <button className="btn btn-primary btn-block" onClick={handlelogin}>Log in</button>
+            <button className="btn btn-primary btn-block" onClick={handleLogin}>Log in</button>
         </div>
               
     </form>
