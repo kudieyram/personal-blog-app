@@ -10,7 +10,7 @@ function LogInComponent() {
     // these is is the routehistory, allows us to route to the blog post
     const routeHistory = useHistory()
 
-    // these are the constants of the email and password
+    // these are the const definitions of the email and password
     const [emailState, setEmail] = React.useState({
         email: "",
     })
@@ -40,7 +40,7 @@ function LogInComponent() {
             alert('Provide a valid Email/Password, Try again')
             return
         }
-        
+
             // alert('😍Log In Successful   '+ emailState.email)
 
             routeHistory.push('/new_post')
