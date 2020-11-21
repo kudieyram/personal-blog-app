@@ -1,7 +1,8 @@
 import './App.css';
 import LogInComponent from './components/Login';
 import SignUpComponent from './components/Signup';
-import NewPostComponent from './components/NewPost'
+import NewPostComponent from './components/NewPost';
+import NotFoundComponent from './components/Notfound'
 
 import {
   BrowserRouter as Router,
@@ -22,6 +23,8 @@ function App() {
           <Route path="/signup">< SignUpComponent/></Route>
 
           <Route path="/new_post"><NewPostComponent/></Route>
+
+          <Route><NotFoundComponent/></Route>
 
           <Route exact path="/"><LogInComponent/></Route>
           
