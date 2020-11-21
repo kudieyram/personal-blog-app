@@ -2,38 +2,58 @@ import React from 'react'
 import '../App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import {
-    Link
+    Link,
+    useHistory
   } from "react-router-dom"; 
 
 function SignUpComponent() {
-    const [state, setState] = React.useState({
+    const routeHistory = useHistory()
+
+    const [fullNameState, setFullNameState] = React.useState({
+       fullName: "",
+     })
+    const [emailState, setEmailState] = React.useState({
         email: "",
+     })
+     const [passwordState, setPasswordState] = React.useState({
         password: "",
-        fullname: "",
-        confirmpassword: "",
+     })
+     const [confirmPasswordState, setConfirmPasswordState] = React.useState({
+        confirmPassword: "",
      })
      function handleFullNameChange(event) {
-        setState ({
+        setFullNameState ({
             'fullname': event.target.value
         }) }
      function handleEmailChange(event) {
-        setState ({
+        setEmailState ({
             'email': event.target.value
         }) 
 }
 
     function handlePasswordChange(event) {
-    setState ({
+    setPasswordState ({
        'password' : event.target.value        
     })
 }
     function handleConfirmPasswordChange(event) {
-    setState ({
-        'confirmpassword': event.target.value
+    setConfirmPasswordState ({
+        'confirmPassword': event.target.value
     }) 
 }
-    const handlesigup = () =>{
-        alert('😍Sign Up Successful!     ' + state.fullname)
+    function handlesigup (event) {
+        event.preventDefault();
+        if ( fullNameState.fullName ==='' || emailState.email ==='' || passwordState.password ==='' || confirmPasswordState.confirmPassword ===''){
+            alert('Sign up unsuccessfully')
+            return    
+        }
+
+        if ( passwordState.password !== confirmPasswordState.confirmPassword){
+            alert( 'Password not match')
+            return
+        }
+       routeHistory.push('/new_post') 
+       
     }
   return (
     <div className="login-wrapper" >
@@ -41,16 +61,16 @@ function SignUpComponent() {
     <form>
         <h2 className="text-center">Sign up</h2>       
         <div className="form-group">
-            <input type="text" className="form-control" placeholder="Full Name" required="required" value={state.fullname} onChange={handleFullNameChange}/>
+            <input type="text" className="form-control" placeholder="Full Name" required="required" value={fullNameState.fullname} onChange={handleFullNameChange}/>
         </div>
         <div className="form-group">
-            <input type="email" className="form-control" placeholder="Email" required="required" value={state.email} onChange={handleEmailChange}/>
+            <input type="email" className="form-control" placeholder="Email" required="required" value={emailState.email} onChange={handleEmailChange}/>
         </div>
         <div className="form-group">
-            <input type="password" className="form-control" placeholder="Password" required="required" value={state.password} onChange={handlePasswordChange}/>
+            <input type="password" className="form-control" placeholder="Password" required="required" value={passwordState.password} onChange={handlePasswordChange}/>
         </div>
         <div className="form-group">
-            <input type="confirmpassword" className="form-control" placeholder="Confirm Password" required="required" value={state.confirmpassword} onChange={handleConfirmPasswordChange}/>
+            <input type="password" className="form-control" placeholder="Confirm Password" required="required" value={confirmPasswordState.confirmPassword} onChange={handleConfirmPasswordChange}/>
         </div>
 
         <div className="form-group">

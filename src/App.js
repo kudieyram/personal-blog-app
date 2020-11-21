@@ -25,7 +25,7 @@ function App() {
 
           <Route exact path="/"><LogInComponent/></Route>
           
-        </Switch>
+          </Switch>
       </div>
     </Router>
     </div>
