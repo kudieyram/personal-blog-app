@@ -2,29 +2,41 @@ import React from 'react'
 import '../App.css'
 import 'bootstrap/dist/css/bootstrap.css'
 import {
-    Link,
+    Link ,
+    useHistory,
   } from "react-router-dom"; 
 
 function LogInComponent() {
-    const [state, setState] = React.useState({
+    const routeHistory = useHistory()
+
+    const [emailState, setEmail] = React.useState({
         email: "",
+    })
+
+    const [passwordState, setPassword] = React.useState({
         password: "",
     })
+    // this function is called when someone is typing email.
     function handleEmailChange(event) {
-            setState ({
+            setEmail ({
                 'email': event.target.value
             }) 
     }
-
+        // this function is called when someone is typing password.
     function handlePasswordChange(event) {
-        setState ({
+        setPassword ({
            'password' : event.target.value        
         })
     }
-    
-
-    function handleLogin() {
-            alert('😍Log In Successful   '+ state.email)
+        // this function handles the login action.
+    function handleLogin(event) {
+        event.preventDefault();
+        if (emailState.email === '' || passwordState.password === ''){
+            alert('Provide a valid Email/Password, Try again')
+            return
+        }
+            // alert('😍Log In Successful   '+ emailState.email)
+            routeHistory.push('/new_post')
     }   
    
   return (
@@ -33,10 +45,10 @@ function LogInComponent() {
     <form>
         <h2 className="text-center">Log in</h2>       
         <div className="form-group">
-            <input type="email" className="form-control" placeholder="Email" required="required" name="email" onChange={handleEmailChange} value={state.email}/>
+            <input type="email" className="form-control" placeholder="Email" required="required" name="email" onChange={handleEmailChange} value={emailState.email}/>
         </div>
         <div className="form-group">
-            <input type="password" className="form-control" placeholder="Password" required="required" name="password" onChange ={handlePasswordChange} value={state.password}/>
+            <input type="password" className="form-control" placeholder="Password" required="required" name="password" onChange ={handlePasswordChange} value={passwordState.password}/>
         </div>
         <div className="form-group">
         </div>
@@ -45,7 +57,7 @@ function LogInComponent() {
         </div>
               
     </form>
-    <p className="text-center">New Here?<a href = '/signup'>Create an Account</a></p>
+    <p className="text-center">New Here?<Link to= '/signup'>Create an Account</Link></p>
 </div>
     </div>
   );

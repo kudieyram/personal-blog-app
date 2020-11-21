@@ -58,7 +58,7 @@ function SignUpComponent() {
         </div>
               
     </form>
-    <p className="text-center">Already have an account?<a href='/login'>Log In</a></p>
+    <p className="text-center">Already have an account?<Link to='/login'>Log In</Link></p>
 </div>
     </div>
   );
