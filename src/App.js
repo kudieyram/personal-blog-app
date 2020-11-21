@@ -24,9 +24,9 @@ function App() {
 
           <Route path="/new_post"><NewPostComponent/></Route>
 
-          <Route><NotFoundComponent/></Route>
-
           <Route exact path="/"><LogInComponent/></Route>
+
+          <Route><NotFoundComponent/></Route>
           
           </Switch>
       </div>
