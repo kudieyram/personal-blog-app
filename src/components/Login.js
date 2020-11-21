@@ -54,11 +54,14 @@ function LogInComponent() {
             <div className="form-group">
                 <input type="email" className="form-control" placeholder="Email" required="required" name="email" onChange={handleEmailChange} value={emailState.email}/>
             </div>
+
             <div className="form-group">
                 <input type="password" className="form-control" placeholder="Password" required="required" name="password" onChange ={handlePasswordChange} value={passwordState.password}/>
             </div>
+
             <div className="form-group">
             </div>
+            
             <div className="form-group">
                 <button className="btn btn-primary btn-block" onClick={handleLogin}>Log in</button>
             </div>
