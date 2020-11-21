@@ -6,14 +6,12 @@ import {
   } from "react-router-dom"; 
 
 function AllPostsComponent() {
+    
 
-
-  
-   
   return (
-    <div className="login-wrapper" >
+    <div>
         
-         
+        bsnkvwjdjall;jodqewdjeqed[ewk] 
      
     </div>
   );

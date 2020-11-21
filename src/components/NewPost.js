@@ -4,6 +4,7 @@ import 'bootstrap/dist/css/bootstrap.css'
 import {
     useHistory,
   } from "react-router-dom"; 
+import AllPostsComponent from './AllPost';
 
 function NewPostComponent() {
 
@@ -35,12 +36,16 @@ function NewPostComponent() {
        alert ('Need to provide Blog Title and Content to proceed. Try Again')
         return
       }
-      routeHistory.push('/all_posts')
+      
+      // routeHistory.push('/all_posts')
   }
    
   return (
-    <div className="login-wrapper" >
-        <div className="login-form">
+    <div className="login-wrapper"  >
+        <div className="container">
+
+          <div className="row">
+            <div className="col-md-6">
           <form>
             <h2 className="text-center">Welcome Kudi_yram Blog!</h2>       
             <div className="form-group">
@@ -54,8 +59,24 @@ function NewPostComponent() {
             <div className="form-group">
               <button className="btn btn-primary btn-block" onClick={handlePostAdd}>Add New Blog Post</button>
             </div>      
-    </form>
+          </form>
+          </div>
+
+          <div className="col-md-6">
+            <div>
+              <h2> Recent Post </h2>
+              <AllPostsComponent/>
+            </div>
+
+          </div>
+          </div>
+
+          
+
+         
+          
         </div>
+
          
      
     </div>
