@@ -66,7 +66,7 @@ function LogInComponent() {
                 <button className="btn btn-primary btn-block" onClick={handleLogin}>Log in</button>
             </div>
     </form>
-    <p className="text-center">New Here?<Link to= '/signup'>Create an Account</Link></p>
+    <p className="text-center">Not Registereds?<Link to= '/signup'>Create an Account</Link></p>
 </div>
     </div>
   );

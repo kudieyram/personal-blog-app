@@ -3,12 +3,14 @@ import LogInComponent from './components/Login';
 import SignUpComponent from './components/Signup';
 import NewPostComponent from './components/NewPost';
 import NotFoundComponent from './components/Notfound'
+import AllPostsComponent from './components/AllPost';
 
 import {
   BrowserRouter as Router,
   Switch,
   Route
 } from "react-router-dom";
+
 
 
 function App() {
@@ -24,6 +26,8 @@ function App() {
           <Route path="/signup">< SignUpComponent/></Route>
 
           <Route path="/new_post"><NewPostComponent/></Route>
+
+          <Route path="/all_posts"><AllPostsComponent/></Route>
 
           <Route exact path="/"><LogInComponent/></Route>
 
