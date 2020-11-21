@@ -10,6 +10,7 @@ import {
   Route
 } from "react-router-dom";
 
+
 function App() {
   return (
     <div>
@@ -28,10 +29,10 @@ function App() {
 
           <Route><NotFoundComponent/></Route>
           
-          </Switch>
+        </Switch>
       </div>
     </Router>
-    </div>
+  </div>
   );
 }
 
