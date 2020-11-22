@@ -11,7 +11,7 @@ function AllPostsComponent() {
   return (
     <div>
         
-        bsnkvwjdjall;jodqewdjeqed[ewk] 
+          The First Blog Posts
      
     </div>
   );

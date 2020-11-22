@@ -74,27 +74,27 @@ function SignUpComponent() {
             <form>
                 <h2 className="text-center">Sign up</h2>       
                     <div className="form-group">
-                    <input type="text" className="form-control" placeholder="Full Name" required="required" value={fullNameState.fullname} onChange={handleFullNameChange}/>
-                </div>
+                        <input type="text" className="form-control" placeholder="Full Name" required="required" value={fullNameState.fullname} onChange={handleFullNameChange}/>
+                    </div>
 
-                <div className="form-group">
-                    <input type="email" className="form-control" placeholder="Email" required="required" value={emailState.email} onChange={handleEmailChange}/>
-                </div>
+                    <div className="form-group">
+                        <input type="email" className="form-control" placeholder="Email" required="required" value={emailState.email} onChange={handleEmailChange}/>
+                    </div>
 
-                <div className="form-group">
-                    <input type="password" className="form-control" placeholder="Password" required="required" value={passwordState.password} onChange={handlePasswordChange}/>
-                </div>
+                    <div className="form-group">
+                        <input type="password" className="form-control" placeholder="Password" required="required" value={passwordState.password} onChange={handlePasswordChange}/>
+                    </div>
 
-                <div className="form-group">
-                    <input type="password" className="form-control" placeholder="Confirm Password" required="required" value={confirmPasswordState.confirmPassword} onChange={handleConfirmPasswordChange}/>
-                </div>
+                    <div className="form-group">
+                        <input type="password" className="form-control" placeholder="Confirm Password" required="required" value={confirmPasswordState.confirmPassword} onChange={handleConfirmPasswordChange}/>
+                    </div>
 
-                <div className="form-group">
-                    <button className="btn btn-primary btn-block" onClick={handlesigup}>Sign Up</button>
-                </div>    
+                    <div className="form-group">
+                        <button className="btn btn-primary btn-block" onClick={handlesigup}>Sign Up</button>
+                    </div>    
             </form>
     
-                <p className="text-center">Already have an account?<Link to='/login'>Log In</Link></p>
+                    <p className="text-center">Already have an account?<Link to='/login'>Log In</Link></p>
 
         </div>
     </div>
