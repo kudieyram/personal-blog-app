@@ -18,6 +18,10 @@ function NewPostComponent() {
    content: "",
   })
 
+  const [postsState, setPosts] = React.useState({
+    posts: [],
+   })
+
   function handleTitleChange(event) {
     setTitle({
      'title' : event.target.value        
@@ -36,7 +40,13 @@ function NewPostComponent() {
        alert ('Need to provide Blog Title and Content to proceed. Try Again')
         return
       }
-      
+      const post = {
+        "title":  titleState.title,
+        "content":  contentState.content,
+
+      }
+      postsState.posts.push(post) 
+
       // routeHistory.push('/all_posts')
   }
    

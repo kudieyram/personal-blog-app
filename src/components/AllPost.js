@@ -5,7 +5,7 @@ import {
     Link
   } from "react-router-dom"; 
 
-function AllPostsComponent() {
+function AllPostsComponent(props) {
     
 
   return (
