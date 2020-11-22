@@ -1,14 +1,9 @@
 import React from 'react'
 import '../App.css'
 import 'bootstrap/dist/css/bootstrap.css'
-import {
-    useHistory,
-  } from "react-router-dom"; 
 import AllPostsComponent from './AllPost';
 
 function NewPostComponent() {
-
-  const routeHistory = useHistory()
 
   const [titleState, setTitle] = React.useState({
    title: "",
@@ -22,6 +17,10 @@ function NewPostComponent() {
     posts: [],
    })
 
+   const [authorState, setAuthor] = React.useState({
+    author: "",
+   }) 
+
   function handleTitleChange(event) {
     setTitle({
      'title' : event.target.value        
@@ -34,9 +33,15 @@ function NewPostComponent() {
     })
   }
 
+  function handleAuthorChange(event) {
+    setAuthor({
+       'author' : event.target.value        
+    })
+  }
+
   function handlePostAdd(event) {
     event.preventDefault(); 
-      if ( titleState.title ==='' ||  contentState.content===''){
+      if ( titleState.title ==='' ||  contentState.content==='' || authorState.author===''){
        alert ('Need to provide Blog Title and Content to proceed. Try Again')
         return
       }
@@ -44,13 +49,27 @@ function NewPostComponent() {
       const post = {
         "title":  titleState.title,
         "content":  contentState.content,
-
+        "author": authorState.author, 
       }
-       setPosts({
-         ...postsState,
-       })
-
+      
        postsState.posts.push(post) 
+
+       setPosts({
+        ...postsState,
+      }) 
+
+        // setting the input field to empty
+      setTitle({
+        "title": ""
+      })
+
+      setContent({
+        "content": ""
+      })
+
+      setAuthor({
+        "author": ""
+      })
       // routeHistory.push('/all_posts')
   }
    
@@ -71,6 +90,10 @@ function NewPostComponent() {
             </div>
 
             <div className="form-group">
+              <input type="text" className="form-control" placeholder="Author's Name" required="required" name="authorname" value={authorState.author} onChange={handleAuthorChange}/>
+            </div>
+
+            <div className="form-group">
               <button className="btn btn-primary btn-block" onClick={handlePostAdd}>Add New Blog Post</button>
             </div>      
           </form>
@@ -83,7 +106,7 @@ function NewPostComponent() {
             </div>
 
           </div>
-          </div>
+        </div>
 
           
 
