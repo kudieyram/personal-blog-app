@@ -40,13 +40,17 @@ function NewPostComponent() {
        alert ('Need to provide Blog Title and Content to proceed. Try Again')
         return
       }
+
       const post = {
         "title":  titleState.title,
         "content":  contentState.content,
 
       }
-      postsState.posts.push(post) 
+       setPosts({
+         ...postsState,
+       })
 
+       postsState.posts.push(post) 
       // routeHistory.push('/all_posts')
   }
    
@@ -75,7 +79,7 @@ function NewPostComponent() {
           <div className="col-md-6">
             <div>
               <h2> Recent Post </h2>
-              <AllPostsComponent/>
+              <AllPostsComponent info={postsState.posts}/>
             </div>
 
           </div>
