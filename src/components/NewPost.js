@@ -108,14 +108,8 @@ function NewPostComponent() {
           </div>
         </div>
 
-          
+      </div>
 
-         
-          
-        </div>
-
-         
-     
     </div>
   );
 }

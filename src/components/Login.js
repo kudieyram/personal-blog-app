@@ -37,7 +37,7 @@ function LogInComponent() {
     function handleLogin(event) {
         event.preventDefault();
         if (emailState.email === '' || passwordState.password === ''){
-            alert('Provide a valid Email/Password, Try again')
+            alert('Provide a valid Email & Password. Try again')
             return
         }
 

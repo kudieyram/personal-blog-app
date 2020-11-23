@@ -18,7 +18,7 @@ function AllPostsComponent(props) {
               <div className="d-flex w-100 justify-content-between" >
                 <h5 className="mb-1">{item.title}</h5>
                 <small>3 days ago</small>
-            </div>
+              </div>
                 <p className="mb-1">{item.content}</p>
                 <small>{item.author}</small>
             </Link>
