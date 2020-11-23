@@ -7,7 +7,7 @@ import {
 
   function NotFoundComponent() {
     return (
-      <div>
+      <div className="login-wrapper">
         <div className="container">
         <div className="error-wrapper">
             <div className="man-icon"></div>

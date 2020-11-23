@@ -21,6 +21,10 @@ function NewPostComponent() {
     author: "",
    }) 
 
+   const [coauthorState, setCoAuthor] = React.useState({
+    coauthor: "",
+   })
+
   function handleTitleChange(event) {
     setTitle({
      'title' : event.target.value        
@@ -39,6 +43,12 @@ function NewPostComponent() {
     })
   }
 
+  function handleCoAuthorChange(event) {
+    setCoAuthor({
+       'coauthor' : event.target.value        
+    })
+  }
+
   function handlePostAdd(event) {
     event.preventDefault(); 
       if ( titleState.title ==='' ||  contentState.content==='' || authorState.author===''){
@@ -50,6 +60,7 @@ function NewPostComponent() {
         "title":  titleState.title,
         "content":  contentState.content,
         "author": authorState.author, 
+        "coauthor": coauthorState.coauthor,
       }
       
        postsState.posts.push(post) 
@@ -69,6 +80,10 @@ function NewPostComponent() {
 
       setAuthor({
         "author": ""
+      })
+
+      setCoAuthor({
+        "coauthor": ""
       })
       // routeHistory.push('/all_posts')
   }
@@ -91,6 +106,10 @@ function NewPostComponent() {
 
             <div className="form-group">
               <input type="text" className="form-control" placeholder="Author's Name" required="required" name="authorname" value={authorState.author} onChange={handleAuthorChange}/>
+            </div>
+
+            <div className="form-group">
+              <input type="text" className="form-control" placeholder="Co-Author's Name" required="required" name="coauthorname" value={coauthorState.coauthor} onChange={handleCoAuthorChange}/>
             </div>
 
             <div className="form-group">
