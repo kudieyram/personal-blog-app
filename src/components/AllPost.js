@@ -17,7 +17,7 @@ function AllPostsComponent(props) {
             <Link key={index} className="list-group-item list-group-item-action mt-2" >
               <div className="d-flex w-100 justify-content-between" >
                 <h5 className="mb-1">{item.title}</h5>
-                <small>3 days ago</small>
+                <small>1 days ago</small>
               </div>
                 <p className="mb-1">{item.content}</p>
                 <small>{item.author}</small>
