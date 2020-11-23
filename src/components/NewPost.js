@@ -80,7 +80,7 @@ function NewPostComponent() {
           <div className="row">
             <div className="col-md-6">
           <form>
-            <h2 className="text-center">Welcome Kudi_yram Blog!</h2>       
+            <h2 className="text-center">Welcome this Blog!</h2>       
             <div className="form-group">
               <input type="text" className="form-control" placeholder="Title of Blog Post" required="required" name="title" value={titleState.title} onChange={handleTitleChange}/>
             </div>
